@@ -1,5 +1,4 @@
-import { Character } from "../models/character";
-import { adaptComic, ComicApiItem } from "./comic-adapter";
+import { Character } from '../models/character';
 
 export type CharacterApiItem = {
   id: number;
@@ -10,14 +9,11 @@ export type CharacterApiItem = {
 
 export const adaptCharacter = ({
   characterData,
-  comicsData,
 }: {
   characterData: CharacterApiItem;
-  comicsData?: ComicApiItem[];
 }): Character => ({
   id: characterData.id,
   name: characterData.name,
-  description: characterData.description ?? "",
+  description: characterData.description ?? '',
   avatarUrl: `${characterData.thumbnail.path}.${characterData.thumbnail.extension}`,
-  comics: comicsData?.map((comic) => adaptComic(comic)) ?? [],
 });
