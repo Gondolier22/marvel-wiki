@@ -19,7 +19,7 @@ describe('CharacterCard', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('Spider-Man')).toBeInTheDocument();
-    expect(screen.getByAltText('Avatar of Spider-Man')).toBeInTheDocument();
+    expect(screen.getByText('Spider-Man')).toBeTruthy();
+    expect(screen.getByAltText('Avatar of Spider-Man')).toBeTruthy();
   });
 });

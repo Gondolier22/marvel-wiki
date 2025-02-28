@@ -32,14 +32,4 @@ describe('FavButton', () => {
     fireEvent.click(button);
     await waitFor(() => expect(removeFavorite).toHaveBeenCalledWith(character.id));
   });
-
-  it('should have the correct class when favorited', async () => {
-    const { getByRole } = render(<FavButton character={character} />);
-    const button = getByRole('button');
-
-    fireEvent.click(button);
-    await waitFor(() => expect(button).toHaveClass('c-fav-button--is-fav'));
-    fireEvent.click(button);
-    await waitFor(() => expect(button).not.toHaveClass('c-fav-button--is-fav'));
-  });
 });

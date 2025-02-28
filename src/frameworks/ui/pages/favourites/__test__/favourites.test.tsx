@@ -22,9 +22,9 @@ describe('Favourites', () => {
       </AppProviderMock>
     );
 
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
-    expect(screen.getByText(/0 results/i)).toBeInTheDocument();
-    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getByRole('textbox')).toBeTruthy();
+    expect(screen.getByText(/0 results/i)).toBeTruthy();
+    expect(screen.getByRole('list')).toBeTruthy();
   });
 
   it('should display the correct number of favourite characters', () => {
@@ -49,7 +49,7 @@ describe('Favourites', () => {
       </AppProviderMock>
     );
 
-    expect(screen.getByText(/1 results/i)).toBeInTheDocument();
-    expect(screen.getByText('Spider-Man')).toBeInTheDocument();
+    expect(screen.getByText(/1 results/i)).toBeTruthy();
+    expect(screen.getByText('Spider-Man')).toBeTruthy();
   });
 });

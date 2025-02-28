@@ -16,7 +16,7 @@ describe('Searcher', () => {
   it('should display the correct placeholder text', () => {
     const { getByPlaceholderText } = render(<Searcher {...defaultProps} />);
     const inputElement = getByPlaceholderText('Search a character...');
-    expect(inputElement).toBeInTheDocument();
+    expect(inputElement).toBeTruthy();
   });
 
   it('should call onChange when input value changes', () => {
@@ -29,6 +29,6 @@ describe('Searcher', () => {
   it('should display the correct number of results', () => {
     const { getByText } = render(<Searcher {...defaultProps} totalResults={5} />);
     const resultsElement = getByText('5 results');
-    expect(resultsElement).toBeInTheDocument();
+    expect(resultsElement).toBeTruthy();
   });
 });
