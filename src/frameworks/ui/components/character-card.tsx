@@ -7,9 +7,9 @@ export type CharacterCardProps = Pick<Character, 'id' | 'name' | 'avatarUrl'>;
 
 export const CharacterCard: FC<CharacterCardProps> = ({ avatarUrl, id, name }) => {
   return (
-    <article className="c-character-card">
-      <Link to={`/characters/${id}`}>
-        <figure className="c-character-card__figure">
+    <article className="c-character-card" role="article">
+      <Link to={`/characters/${id}`} role="link">
+        <figure className="c-character-card__figure" role="figure">
           <img
             className="c-character-card__image"
             src={avatarUrl}
@@ -17,9 +17,12 @@ export const CharacterCard: FC<CharacterCardProps> = ({ avatarUrl, id, name }) =
             onError={(event) => {
               event.currentTarget.src = '/image_not_found.svg';
             }}
+            role="img"
           />
-          <figcaption className="c-character-card__caption">
-            <h3 className="c-character-card__name">{name}</h3>
+          <figcaption className="c-character-card__caption" role="figcaption">
+            <h3 className="c-character-card__name" role="heading">
+              {name}
+            </h3>
             <FavButton character={{ avatarUrl, id, name }} />
           </figcaption>
         </figure>

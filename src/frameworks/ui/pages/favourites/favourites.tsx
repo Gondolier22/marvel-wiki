@@ -7,7 +7,7 @@ const Favourites = () => {
 
   return (
     <section className="c-characters-list">
-      <Searcher onChange={setSearch} value={search} totalResults={favourites?.length ?? 0} />
+      <Searcher onChange={setSearch} value={search} totalResults={favourites.length} />
       <CharacterCardList cards={favourites} />
     </section>
   );
