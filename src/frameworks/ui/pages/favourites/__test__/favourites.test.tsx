@@ -1,20 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import Favourites from '../favourites';
 import { useFavouritesController } from '../hooks/use-favourites-controller';
-import { vi } from 'vitest';
 import { AppProviderMock } from '../../../mocks/app-provider-mock';
 
-vi.mock('../hooks/use-favourites-controller');
+jest.mock('../hooks/use-favourites-controller');
 
 describe('Favourites', () => {
   it('should render the searcher and character card list', () => {
-    const mockUseFavouritesController = useFavouritesController as vi.MockedFunction<
+    const mockUseFavouritesController = useFavouritesController as jest.MockedFunction<
       typeof useFavouritesController
     >;
     mockUseFavouritesController.mockReturnValue({
       favourites: [],
       search: '',
-      setSearch: vi.fn(),
+      setSearch: jest.fn(),
     });
 
     render(
@@ -29,7 +28,7 @@ describe('Favourites', () => {
   });
 
   it('should display the correct number of favourite characters', () => {
-    const mockUseFavouritesController = useFavouritesController as vi.MockedFunction<
+    const mockUseFavouritesController = useFavouritesController as jest.MockedFunction<
       typeof useFavouritesController
     >;
     mockUseFavouritesController.mockReturnValue({
@@ -41,7 +40,7 @@ describe('Favourites', () => {
         },
       ],
       search: '',
-      setSearch: vi.fn(),
+      setSearch: jest.fn(),
     });
 
     render(

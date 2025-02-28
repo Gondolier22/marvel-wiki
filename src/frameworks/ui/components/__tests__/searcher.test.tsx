@@ -1,9 +1,8 @@
 import { render, fireEvent } from '@testing-library/react';
 import { Searcher } from '../searcher';
-import { vi } from 'vitest';
 
 describe('Searcher', () => {
-  const mockOnChange = vi.fn();
+  const mockOnChange = jest.fn();
   const defaultProps = {
     value: '',
     totalResults: 0,

@@ -1,16 +1,15 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { FavButton } from '../fav-button';
 import { addFavorite, removeFavorite } from '../../../../utils/indexedDB';
-import { vi } from 'vitest';
 
-vi.mock('../../../../utils/indexedDB', () => ({
-  addFavorite: vi.fn(),
-  removeFavorite: vi.fn(),
-  openDB: vi.fn().mockResolvedValue({
-    transaction: vi.fn().mockReturnValue({
-      objectStore: vi.fn().mockReturnValue({
-        get: vi.fn().mockImplementation(() => ({
-          onsuccess: vi.fn(),
+jest.mock('../../../../utils/indexedDB', () => ({
+  addFavorite: jest.fn(),
+  removeFavorite: jest.fn(),
+  openDB: jest.fn().mockResolvedValue({
+    transaction: jest.fn().mockReturnValue({
+      objectStore: jest.fn().mockReturnValue({
+        get: jest.fn().mockImplementation(() => ({
+          onsuccess: jest.fn(),
         })),
       }),
     }),
