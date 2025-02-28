@@ -1,0 +1,19 @@
+.c-fav-button {
+  z-index: 2;
+  cursor: pointer;
+  pointer-events: all;
+  margin-left: 3px;
+}
+
+.c-fav-button img,
+.c-fav-button--hover img {
+  content: url('/fav_off.svg');
+}
+
+.c-fav-button--is-fav img {
+  content: url('/fav_on.svg');
+}
+
+.c-fav-button--hover.c-fav-button--hover img {
+  content: url('/fav_off.svg');
+}

@@ -53,6 +53,9 @@
 
 .c-character-card__caption:hover::before {
   top: 0;
+  @media screen and (max-width: 975px) {
+    top: -100%;
+  }
 }
 
 .c-character-card__fav-button {
