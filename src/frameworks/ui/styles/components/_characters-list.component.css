@@ -4,12 +4,15 @@
   align-items: flex-start;
   justify-content: center;
   animation: fadeIn 0.5s;
+  width: calc(100% - 20px);
+  animation: fadeIn 2s;
 }
 .c-characters-list__container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 20px;
   padding: 20px;
+  animation: fadeIn 2s;
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(6, 1fr);

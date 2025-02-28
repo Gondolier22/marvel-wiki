@@ -1,5 +1,5 @@
 .c-searcher {
-  width: 100%;
+  width: inherit;
   margin-top: 3rem;
   padding: 0 20px;
 }
@@ -7,7 +7,7 @@
 .c-searcher__input-container {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: inherit;
   border-bottom: 1px solid black;
 }
 
@@ -18,7 +18,7 @@
 .c-searcher__input {
   border: none;
   padding: 8px;
-  width: 100%;
+  width: inherit;
 }
 .c-searcher__input::placeholder {
   text-transform: uppercase;

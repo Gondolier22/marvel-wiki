@@ -8,10 +8,6 @@
   text-decoration: none;
 }
 
-.c-character-card__figure {
-  /* ... */
-}
-
 .c-character-card__image {
   width: 100%;
   background-color: gray;

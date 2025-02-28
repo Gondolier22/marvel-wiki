@@ -14,6 +14,6 @@ export const adaptCharacter = ({
 }): Character => ({
   id: characterData.id,
   name: characterData.name,
-  description: characterData.description ?? '',
-  avatarUrl: `${characterData.thumbnail.path}.${characterData.thumbnail.extension}`,
+  description: characterData.description ? characterData.description : 'No description available',
+  avatarUrl: `${characterData.thumbnail?.path}.${characterData.thumbnail?.extension}`,
 });
