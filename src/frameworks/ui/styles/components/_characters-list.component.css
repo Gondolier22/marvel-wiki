@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 20px;
   animation: fadeIn 0.5s;
 }
 .c-characters-list__container {

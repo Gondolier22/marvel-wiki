@@ -1,0 +1,35 @@
+.c-searcher {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 0 20px;
+}
+
+.c-searcher__input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.c-searcher__icon {
+  margin-right: 8px;
+}
+
+.c-searcher__input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+.c-searcher__input::placeholder {
+  text-transform: uppercase;
+  color: var(--input-placeholder-color);
+}
+
+.c-searcher__input:focus {
+  outline: none;
+}
+
+.c-searcher__results {
+  text-transform: uppercase;
+  font-size: 12px;
+}
