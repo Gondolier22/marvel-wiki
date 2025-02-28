@@ -1,0 +1,12 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+*::-webkit-scrollbar {
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+}
