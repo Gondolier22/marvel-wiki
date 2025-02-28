@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { ComicCard } from './components/comic-card';
 import { useCharacterDetailController } from './hooks/use-character-detail-controller';
+import { Loader } from '../../components/loader';
 
 const CharacterDetail = () => {
   const {
@@ -14,7 +15,7 @@ const CharacterDetail = () => {
     handleMouseUp,
   } = useCharacterDetailController();
 
-  if (isLoading) return null;
+  if (isLoading) return <Loader />;
 
   return (
     <section className="c-character">

@@ -1,0 +1,12 @@
+@keyframes load {
+  to {
+    width: 100%;
+  }
+}
+
+.c-loader {
+  width: 0;
+  height: 4px;
+  background-color: var(--marvel-red);
+  animation: load 2s forwards;
+}
