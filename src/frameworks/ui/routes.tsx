@@ -6,6 +6,8 @@ const CharactersList = lazy(() => import('./pages/characters-list/characters-lis
 
 const CharacterDetail = lazy(() => import('./pages/character-detail/character-detail'));
 
+const Favourties = lazy(() => import('./pages/favourites/favourites'));
+
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -13,6 +15,7 @@ export const AppRoutes = () => {
         <Route Component={MainLayout}>
           <Route path="/" Component={CharactersList} />
           <Route path="/characters/:id" Component={CharacterDetail} />
+          <Route path="/favs" Component={Favourties} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Route>
       </Routes>

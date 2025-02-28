@@ -3,13 +3,14 @@
 }
 
 .c-character-detail {
+  width: inherit;
   border-top: 1px solid #333333;
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-  @media (max-width: 975px) {
+  @media (max-width: 550px) {
     flex-direction: column;
     border-top: none;
   }
@@ -18,7 +19,8 @@
 .c-character-detail__image {
   width: 100%;
   max-width: 320px;
-  @media screen and (max-width: 975px) {
+  @media screen and (max-width: 550px) {
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -29,7 +31,15 @@
   text-align: center;
   padding: 40px;
 
-  @media screen and (max-width: 975px) {
+  @media screen and (max-width: 9750px) {
+    text-align: left;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 0px;
+    margin: 1rem;
+  }
+
+  @media screen and (max-width: 550px) {
     text-align: left;
     min-width: 100%;
     max-width: 100%;

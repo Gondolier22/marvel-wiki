@@ -1,3 +1,4 @@
+import { CharacterCardProps } from '../frameworks/ui/components/character-card';
 import { Character } from '../models/character';
 
 const DB_NAME = 'MarvelWikiDB';
@@ -28,7 +29,7 @@ export const openDB = (): Promise<IDBDatabase> => {
   });
 };
 
-export const addFavorite = async (favorite: Pick<Character, 'id' | 'name' | 'avatarUrl'>) => {
+export const addFavorite = async (favorite: CharacterCardProps) => {
   const db = await openDB();
   const transaction = db.transaction(STORE_NAME, 'readwrite');
   const store = transaction.objectStore(STORE_NAME);
@@ -55,6 +56,28 @@ export const getFavoritesCount = async (): Promise<number> => {
   const request = store.count();
   return new Promise((resolve, reject) => {
     request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+};
+
+export const searchFavorites = async (searchTerm: string): Promise<CharacterCardProps[]> => {
+  const db = await openDB();
+  const transaction = db.transaction(STORE_NAME, 'readonly');
+  const store = transaction.objectStore(STORE_NAME);
+  const request = store.getAll();
+
+  return new Promise((resolve, reject) => {
+    request.onsuccess = () => {
+      const allFavorites = request.result as Character[];
+      if (!searchTerm || searchTerm.trim() === '') {
+        resolve(allFavorites);
+      } else {
+        const filteredFavorites = allFavorites.filter((favorite) =>
+          favorite.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        resolve(filteredFavorites);
+      }
+    };
     request.onerror = () => reject(request.error);
   });
 };

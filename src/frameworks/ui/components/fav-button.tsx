@@ -5,10 +5,12 @@ import { useEffect } from 'react';
 import classNames from 'classnames';
 
 type FavButtonProps = {
-  character: Pick<Character, 'id' | 'name' | 'avatarUrl'>;
+  character?: Pick<Character, 'id' | 'name' | 'avatarUrl'>;
 };
 
-export const FavButton: FC<FavButtonProps> = ({ character }) => {
+export const FavButton: FC<FavButtonProps> = ({
+  character = { id: 0, avatarUrl: '', name: '' },
+}) => {
   const [isFav, setIsFav] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);

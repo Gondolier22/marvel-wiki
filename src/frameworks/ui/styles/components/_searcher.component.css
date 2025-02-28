@@ -7,7 +7,7 @@
 .c-searcher__input-container {
   display: flex;
   align-items: center;
-  width: inherit;
+  width: 100%;
   border-bottom: 1px solid black;
 }
 

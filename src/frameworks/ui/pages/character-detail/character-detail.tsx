@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { ComicCard } from './components/comic-card';
 import { useCharacterDetailController } from './hooks/use-character-detail-controller';
 import { Loader } from '../../components/loader';
+import { FavButton } from '../../components/fav-button';
 
 const CharacterDetail = () => {
   const {
@@ -27,10 +28,8 @@ const CharacterDetail = () => {
         />
         <div className="c-character-detail__info">
           <h1 className="c-character-detail__name">
-            <span>{detail?.name}</span>{' '}
-            <button>
-              <img src="/fav_off.svg" />
-            </button>
+            <span>{detail?.name}</span>
+            <FavButton character={detail} />
           </h1>
           <p className="c-character-detail__description">{detail?.description}</p>
         </div>

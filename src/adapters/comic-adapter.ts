@@ -9,7 +9,10 @@ export type ComicApiItem = {
 
 export const adaptComic = (data: ComicApiItem): Comic => ({
   id: data.id,
-  imageUrl: `${data.images[0]?.path}.${data.images[0]?.extension}`,
+  imageUrl:
+    data.images.length > 0
+      ? `${data.images[0]?.path}.${data.images[0]?.extension}`
+      : '/image_not_found.svg',
   title: data.title,
   year: new Date(data.dates.find((date) => date.type === 'onsaleDate')?.date ?? '').getFullYear(),
 });

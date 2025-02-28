@@ -1,7 +1,7 @@
 import { Loader } from '../../components/loader';
-import { CharacterCard } from './components/character-card';
-import { Searcher } from './components/searcher';
+import { Searcher } from '../../components/searcher';
 import { useCharacterListController } from './hooks/use-characters-list-controller';
+import { CharacterCardList } from '../../components/characters-cards-list';
 
 const CharactersList = () => {
   const { data, searchText, setSearchText, isLoading } = useCharacterListController();
@@ -11,17 +11,9 @@ const CharactersList = () => {
       {isLoading && <Loader />}
       <Searcher onChange={setSearchText} value={searchText} totalResults={data?.length ?? 0} />
       {!isLoading && (
-        <div className="c-characters-list__container">
-          {data?.map((character) => (
-            <div key={character.id}>
-              <CharacterCard
-                avatarUrl={character.avatarUrl}
-                name={character.name}
-                id={character.id}
-              />
-            </div>
-          ))}
-        </div>
+        <CharacterCardList
+          cards={data?.map(({ id, name, avatarUrl }) => ({ id, name, avatarUrl })) ?? []}
+        />
       )}
     </section>
   );
