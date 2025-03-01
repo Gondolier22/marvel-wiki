@@ -31,7 +31,7 @@
   text-align: center;
   padding: 40px;
 
-  @media screen and (max-width: 9750px) {
+  @media screen and (max-width: 975px) {
     text-align: left;
     min-width: 300px;
     max-width: 300px;
