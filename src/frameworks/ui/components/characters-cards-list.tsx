@@ -2,9 +2,12 @@ import { FC } from 'react';
 import { CharacterCard, CharacterCardProps } from './character-card';
 import { AlertMessage } from './alert-message';
 
+// Define las propiedades del componente CharacterCardList
 type CharacterCardListProps = {
   cards: CharacterCardProps[];
 };
+
+// Componente funcional CharacterCardList
 export const CharacterCardList: FC<CharacterCardListProps> = ({ cards }) => {
   return (
     <>

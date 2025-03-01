@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { AlertMessage } from './alert-message';
+import { AlertMessage } from '../alert-message';
 
 describe('AlertMessage', () => {
   it('renders the message', () => {

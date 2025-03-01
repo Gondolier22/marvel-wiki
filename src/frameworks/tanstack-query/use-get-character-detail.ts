@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Character } from '../../models/character';
 import { Comic } from '../../models/comic';
 
+// Hook personalizado para obtener detalles del personaje y sus cómics
 export const useGetCharacterDetailQuery = () => {
   const characterId = useParams()?.id;
 

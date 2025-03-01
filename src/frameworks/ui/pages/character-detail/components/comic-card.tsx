@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Comic } from '../../../../../models/comic';
 
+// Componente para mostrar la tarjeta de un cómic
 export const ComicCard: FC<Comic> = ({ title, year, imageUrl }) => {
   return (
     <figure className="c-character-detail__comic">
