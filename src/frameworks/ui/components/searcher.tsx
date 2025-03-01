@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
+// Define las propiedades del componente Searcher
 type SearcherProps = {
   value: string;
   totalResults: number;
   onChange: (value: string) => void;
 };
 
+// Componente funcional Searcher
 export const Searcher: FC<SearcherProps> = ({ onChange, value, totalResults }) => {
   return (
     <div className="c-searcher">

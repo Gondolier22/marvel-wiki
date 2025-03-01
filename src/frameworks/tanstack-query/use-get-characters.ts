@@ -3,6 +3,7 @@ import { adaptCharacter, CharacterApiItem } from '../../adapters/character-adapt
 import { axiosMarvel } from '../axios/axios-marvel';
 import { Character } from '../../models/character';
 
+// Hook personalizado para obtener personajes
 export const useGetCharactersQuery = (searchText: string) => {
   const queryFn = async (search: string) => {
     let url = `/v1/public/characters?limit=50`;

@@ -5,6 +5,7 @@ import { Loader } from '../../components/loader';
 import { FavButton } from '../../components/fav-button';
 import { AlertMessage } from '../../components/alert-message';
 
+// Componente para mostrar el detalle de un personaje
 const CharacterDetail = () => {
   const {
     detail,

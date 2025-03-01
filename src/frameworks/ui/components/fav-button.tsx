@@ -1,13 +1,14 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useRef, useState, useEffect } from 'react';
 import { Character } from '../../../models/character';
 import { addFavorite, openDB, removeFavorite } from '../../../utils/indexedDB';
-import { useEffect } from 'react';
 import classNames from 'classnames';
 
+// Define las propiedades del componente FavButton
 type FavButtonProps = {
   character?: Pick<Character, 'id' | 'name' | 'avatarUrl'>;
 };
 
+// Componente funcional FavButton
 export const FavButton: FC<FavButtonProps> = ({
   character = { id: 0, avatarUrl: '', name: '' },
 }) => {
@@ -15,6 +16,7 @@ export const FavButton: FC<FavButtonProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  // Verifica si el personaje es favorito al montar el componente
   useEffect(() => {
     const checkIsFav = async () => {
       const db = await openDB();
@@ -29,6 +31,7 @@ export const FavButton: FC<FavButtonProps> = ({
     checkIsFav();
   }, [character.id]);
 
+  // Maneja los eventos de hover
   useEffect(() => {
     const handleMouseEnter = () => setIsHovered(true);
     const handleMouseLeave = () => setIsHovered(false);
@@ -43,6 +46,7 @@ export const FavButton: FC<FavButtonProps> = ({
     };
   }, [isHovered]);
 
+  // Maneja el clic en el botón de favoritos
   const handleFavClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (isFav) {

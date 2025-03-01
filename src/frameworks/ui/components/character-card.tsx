@@ -3,8 +3,10 @@ import { Character } from '../../../models/character';
 import { Link } from 'react-router-dom';
 import { FavButton } from './fav-button';
 
+// Define las propiedades del componente CharacterCard
 export type CharacterCardProps = Pick<Character, 'id' | 'name' | 'avatarUrl'>;
 
+// Componente funcional CharacterCard
 export const CharacterCard: FC<CharacterCardProps> = ({ avatarUrl, id, name }) => {
   return (
     <article className="c-character-card" role="article">
