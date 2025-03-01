@@ -36,6 +36,11 @@ class IndexedDBMock {
     // Mock implementation
     return {} as IDBOpenDBRequest;
   }
+
+  searchFavorites(): Promise<unknown> {
+    // Mock implementation
+    return Promise.resolve([]);
+  }
 }
 
 export default new IndexedDBMock();

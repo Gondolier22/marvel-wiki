@@ -56,7 +56,7 @@ const CharacterDetail = () => {
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}
               >
-                {comics?.map((comic) => (
+                {comics.map((comic) => (
                   <ComicCard key={comic.id} {...comic} />
                 ))}
               </div>

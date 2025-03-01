@@ -24,7 +24,7 @@ describe('Favourites', () => {
 
     expect(screen.getByRole('textbox')).toBeTruthy();
     expect(screen.getByText(/0 results/i)).toBeTruthy();
-    expect(screen.getByRole('list')).toBeTruthy();
+    expect(screen.getByRole('alert')).toBeTruthy();
   });
 
   it('should display the correct number of favourite characters', () => {
