@@ -1,0 +1,33 @@
+.c-alert {
+  width: auto;
+  min-width: 30%;
+  max-width: 90%;
+  padding: 20px;
+  margin: 1rem auto;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.c-alert--success {
+  color: var(--success-color);
+  background-color: var(--success-bg-color);
+  border-color: var(--success-border-color);
+}
+
+.c-alert--info {
+  color: var(--info-color);
+  background-color: var(--info-bg-color);
+  border-color: var(--info-border-color);
+}
+
+.c-alert--warning {
+  color: var(--warning-color);
+  background-color: var(--warning-bg-color);
+  border-color: var(--warning-border-color);
+}
+
+.c-alert--error {
+  color: var(--error-color);
+  background-color: var(--error-bg-color);
+  border-color: var(--error-border-color);
+}
