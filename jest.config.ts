@@ -10,5 +10,10 @@ export default {
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testMatch: ['**/*.test.tsx', '**/*.test.ts'],
-  testPathIgnorePatterns: ['/node_modules/', '/src/frameworks/ui/mocks/', '/src/main.tsx'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/src/frameworks/ui/mocks/*\\.*',
+    '<rootDir>/src/main\\.tsx',
+    '<rootDir>/src/utils/indexedDB\\.ts',
+  ],
 };

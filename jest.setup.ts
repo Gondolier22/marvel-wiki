@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import IndexedDBMock from './src/frameworks/ui/mocks/indexe-db-mock';
 // Polyfill for TextEncoder and TextDecoder
 import { TextEncoder } from 'util';
+import { cleanup } from '@testing-library/react';
 
 global.TextEncoder = TextEncoder;
 
@@ -33,3 +34,11 @@ jest.mock('./src/frameworks/axios/axios-marvel', () => ({
     delete: jest.fn(),
   },
 }));
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+afterAll(() => {
+  cleanup();
+});
