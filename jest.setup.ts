@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import IndexedDBMock from './src/frameworks/ui/mocks/indexe-db-mock';
+import IndexedDBMock from './mocks/indexe-db-mock';
 // Polyfill for TextEncoder and TextDecoder
 import { TextEncoder } from 'util';
 import { cleanup } from '@testing-library/react';

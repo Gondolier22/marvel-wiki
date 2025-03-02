@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import CharactersList from '../characters-list';
 import { useCharacterListController } from '../hooks/use-characters-list-controller';
-import { AppProviderMock } from '../../../mocks/app-provider-mock';
+import { AppProviderMock } from '../../../../../../mocks/app-provider-mock';
 
 jest.mock('../hooks/use-characters-list-controller');
 

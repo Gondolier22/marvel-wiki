@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Favourites from '../favourites';
 import { useFavouritesController } from '../hooks/use-favourites-controller';
-import { AppProviderMock } from '../../../mocks/app-provider-mock';
+import { AppProviderMock } from '../../../../../../mocks/app-provider-mock';
 
 jest.mock('../hooks/use-favourites-controller');
 

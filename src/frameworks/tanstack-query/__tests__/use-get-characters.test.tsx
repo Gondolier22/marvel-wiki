@@ -1,7 +1,7 @@
 import { axiosMarvel } from '../../axios/axios-marvel';
 import { renderHook, waitFor } from '@testing-library/react';
-import { AppProviderMock } from '../../ui/mocks/app-provider-mock';
 import { useGetCharactersQuery } from '../use-get-characters';
+import { AppProviderMock } from '../../../../mocks/app-provider-mock';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
