@@ -46,16 +46,14 @@ Marvel Wiki is a web application that allows users to explore information about 
 marvel-wiki
 ├─ .prettierrc
 ├─ babel.config.js
-├─ docs
-│  ├─ fonts
-│  ├─ scripts
-│  │  └─ prettify
-│  └─ styles
 ├─ eslint.config.js
 ├─ index.html
 ├─ jest.config.ts
 ├─ jest.setup.ts
 ├─ LICENSE
+├─ mocks
+│  ├─ app-provider-mock.tsx
+│  └─ indexe-db-mock.ts
 ├─ package-lock.json
 ├─ package.json
 ├─ public
@@ -105,11 +103,12 @@ marvel-wiki
 │  │     ├─ layouts
 │  │     │  └─ main-layout
 │  │     │     ├─ components
-│  │     │     │  └─ header.tsx
-│  │     │     └─ main-layout.tsx
-│  │     ├─ mocks
-│  │     │  ├─ app-provider-mock.tsx
-│  │     │  └─ indexe-db-mock.ts
+│  │     │     │  ├─ header.tsx
+│  │     │     │  └─ __tests__
+│  │     │     │     └─ header.test.tsx
+│  │     │     ├─ main-layout.tsx
+│  │     │     └─ __tests__
+│  │     │        └─ main-layout.test.tsx
 │  │     ├─ pages
 │  │     │  ├─ character-detail
 │  │     │  │  ├─ character-detail.tsx
@@ -129,14 +128,19 @@ marvel-wiki
 │  │     │  │  │     └─ use-characters-list-controller.test.ts
 │  │     │  │  └─ __tests__
 │  │     │  │     └─ characters-list.test.tsx
-│  │     │  └─ favourites
-│  │     │     ├─ favourites.tsx
-│  │     │     ├─ hooks
-│  │     │     │  ├─ use-favourites-controller.ts
-│  │     │     │  └─ __tests__
-│  │     │     │     └─ use-favourites-controller.test.ts
-│  │     │     └─ __test__
-│  │     │        └─ favourites.test.tsx
+│  │     │  ├─ favourites
+│  │     │  │  ├─ favourites.tsx
+│  │     │  │  ├─ hooks
+│  │     │  │  │  ├─ use-favourites-controller.ts
+│  │     │  │  │  └─ __tests__
+│  │     │  │  │     └─ use-favourites-controller.test.ts
+│  │     │  │  └─ __test__
+│  │     │  │     └─ favourites.test.tsx
+│  │     │  └─ not-found
+│  │     │     ├─ not-found.test.tsx
+│  │     │     ├─ not-found.tsx
+│  │     │     └─ __tests__
+│  │     │        └─ not-found.test.tsx
 │  │     ├─ providers
 │  │     │  └─ app-provider.tsx
 │  │     ├─ routes.tsx
@@ -169,12 +173,12 @@ marvel-wiki
 │  │  ├─ character.ts
 │  │  └─ comic.ts
 │  ├─ utils
-│  │  ├─ dateUtils.ts
 │  │  └─ indexedDB.ts
 │  └─ vite-env.d.ts
 ├─ tsconfig.app.json
 ├─ tsconfig.json
 ├─ tsconfig.node.json
+├─ vercel.json
 └─ vite.config.ts
 
 ```
