@@ -16,6 +16,11 @@ describe('CharactersList', () => {
       setSearchText: jest.fn(),
       isLoading: false,
       error: null,
+      isNextPageDisabled: true,
+      isPrevPageDisabled: true,
+      totalItems: 0,
+      onNextPage: jest.fn(),
+      onPrevPage: jest.fn(),
     });
 
     render(
@@ -26,7 +31,7 @@ describe('CharactersList', () => {
 
     expect(screen.getByRole('textbox')).toBeTruthy();
     expect(screen.getByText(/0 results/i)).toBeTruthy();
-    expect(screen.getByRole('alert')).toBeTruthy();
+    expect(screen.queryByRole('alert')).toBeTruthy();
   });
 
   it('should display the correct number of favourite characters', () => {
@@ -46,6 +51,11 @@ describe('CharactersList', () => {
       setSearchText: jest.fn(),
       isLoading: false,
       error: null,
+      isNextPageDisabled: true,
+      isPrevPageDisabled: true,
+      totalItems: 0,
+      onNextPage: jest.fn(),
+      onPrevPage: jest.fn(),
     });
 
     render(
@@ -63,18 +73,16 @@ describe('CharactersList', () => {
       typeof useCharacterListController
     >;
     mockUseCharactersListController.mockReturnValue({
-      data: [
-        {
-          id: 1,
-          name: 'Spider-Man',
-          avatarUrl: 'path/to/spiderman.jpg',
-          description: 'The amazing',
-        },
-      ],
+      data: [],
       searchText: '',
       setSearchText: jest.fn(),
       isLoading: true,
       error: null,
+      isNextPageDisabled: true,
+      isPrevPageDisabled: true,
+      totalItems: 0,
+      onNextPage: jest.fn(),
+      onPrevPage: jest.fn(),
     });
 
     render(
@@ -86,23 +94,21 @@ describe('CharactersList', () => {
     expect(screen.getByRole('status')).toBeTruthy();
   });
 
-  it('should display alert when as error', () => {
+  it('should display alert when there is an error', () => {
     const mockUseCharactersListController = useCharacterListController as jest.MockedFunction<
       typeof useCharacterListController
     >;
     mockUseCharactersListController.mockReturnValue({
-      data: [
-        {
-          id: 1,
-          name: 'Spider-Man',
-          avatarUrl: 'path/to/spiderman.jpg',
-          description: 'The amazing',
-        },
-      ],
+      data: [],
       searchText: '',
       setSearchText: jest.fn(),
       isLoading: false,
       error: new Error('An error occurred'),
+      isNextPageDisabled: true,
+      isPrevPageDisabled: true,
+      totalItems: 0,
+      onNextPage: jest.fn(),
+      onPrevPage: jest.fn(),
     });
 
     render(

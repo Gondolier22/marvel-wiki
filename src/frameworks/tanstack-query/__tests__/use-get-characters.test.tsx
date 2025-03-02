@@ -42,6 +42,7 @@ describe('useGetCharactersQuery', () => {
         return Promise.resolve({
           data: {
             data: {
+              total: 20,
               results: [
                 {
                   id: 123,
@@ -59,17 +60,22 @@ describe('useGetCharactersQuery', () => {
       }
     });
 
-    const { result } = renderHook(() => useGetCharactersQuery('ab'), { wrapper: AppProviderMock });
+    const { result } = renderHook(() => useGetCharactersQuery({ searchText: 'ab', offset: 50 }), {
+      wrapper: AppProviderMock,
+    });
 
     await waitFor(() => {
-      expect(result.current.data).toStrictEqual([
-        {
-          id: 123,
-          name: 'Spider-Man',
-          avatarUrl: 'http://i.annihil.us/u/prod/marvel/i/mg/c/b0/4bc61dec7755f.jpg',
-          description: 'Spider-man description',
-        },
-      ]);
+      expect(result.current.data).toStrictEqual({
+        characters: [
+          {
+            id: 123,
+            name: 'Spider-Man',
+            avatarUrl: 'http://i.annihil.us/u/prod/marvel/i/mg/c/b0/4bc61dec7755f.jpg',
+            description: 'Spider-man description',
+          },
+        ],
+        totalItems: 20,
+      });
       expect(result.current.isLoading).toBe(false);
       expect(result.current.error).toBe(null);
     });
