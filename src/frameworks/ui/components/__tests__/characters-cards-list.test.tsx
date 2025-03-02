@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { CharacterCardList } from '../characters-cards-list';
 import { CharacterCardProps } from '../character-card';
-import { AppProviderMock } from '../../mocks/app-provider-mock';
+import { AppProviderMock } from '../../../../../mocks/app-provider-mock';
 
 describe('CharacterCardList', () => {
   const mockCards: CharacterCardProps[] = [

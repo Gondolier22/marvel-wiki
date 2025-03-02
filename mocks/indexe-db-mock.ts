@@ -41,6 +41,11 @@ class IndexedDBMock {
     // Mock implementation
     return Promise.resolve([]);
   }
+
+  getFavoritesCount(): Promise<number> {
+    // Mock implementation
+    return Promise.resolve(5);
+  }
 }
 
 export default new IndexedDBMock();

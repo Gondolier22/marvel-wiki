@@ -1,5 +1,41 @@
 # Marvel Wiki
 
+## Table of Contents
+
+- [Marvel Wiki](#marvel-wiki)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Project Structure](#project-structure)
+  - [Clean architecture](#clean-architecture)
+    - [Advantages of Clean Architecture](#advantages-of-clean-architecture)
+  - [Technologies Used](#technologies-used)
+    - [React](#react)
+      - [Benefits of React](#benefits-of-react)
+    - [TypeScript](#typescript)
+      - [Benefits of TypeScript](#benefits-of-typescript)
+    - [Vite](#vite)
+    - [Axios](#axios)
+    - [React Query](#react-query)
+      - [Benefits of React Query](#benefits-of-react-query)
+    - [Prettier](#prettier)
+      - [Benefits of Prettier](#benefits-of-prettier)
+    - [ESLint](#eslint)
+      - [Benefits of ESLint](#benefits-of-eslint)
+  - [Methodology and CSS Structure](#methodology-and-css-structure)
+    - [BEM Methodology](#bem-methodology)
+      - [Benefits of BEM](#benefits-of-bem)
+    - [ITCSS Structure](#itcss-structure)
+      - [ITCSS Layers](#itcss-layers)
+      - [Benefits of ITCSS](#benefits-of-itcss)
+  - [Importance of Caching Data](#importance-of-caching-data)
+  - [Unit Tests](#unit-tests)
+    - [Tools Used](#tools-used)
+      - [Benefits of Jest](#benefits-of-jest)
+      - [Benefits of React Testing Library](#benefits-of-react-testing-library)
+  - [Installation](#installation)
+  - [Contributions](#contributions)
+  - [License](#license)
+
 ## Description
 
 Marvel Wiki is a web application that allows users to explore information about characters, comics, and events in the Marvel universe. It uses the Marvel API to obtain updated and relevant data.
@@ -228,6 +264,38 @@ Tool for identifying and reporting on patterns found in ECMAScript/JavaScript co
 - **Customizable Rules**: Allows the creation of custom rules to enforce coding standards specific to your project.
 - **Error Detection**: Helps detect potential errors and bad practices in the code.
 - **Team Consistency**: Ensures that all team members follow the same coding standards, improving code quality and consistency.
+
+## Methodology and CSS Structure
+
+### BEM Methodology
+
+The project uses the BEM (Block, Element, Modifier) methodology for naming CSS classes. BEM helps in creating reusable components and code sharing in front-end development.
+
+#### Benefits of BEM
+
+- **Readability**: BEM naming conventions make the structure of the HTML and CSS more readable and understandable.
+- **Reusability**: Encourages the creation of reusable components, reducing code duplication.
+- **Maintainability**: Simplifies the process of maintaining and updating the codebase.
+
+### ITCSS Structure
+
+The CSS files are organized using the ITCSS (Inverted Triangle CSS) architecture. ITCSS helps in managing the CSS codebase by organizing styles from the most general to the most specific.
+
+#### ITCSS Layers
+
+1. **Settings**: Global variables, colors, fonts, etc.
+2. **Tools**: Mixins and functions.
+3. **Generic**: Reset and/or normalize styles, box-sizing definition, etc.
+4. **Elements**: Styling for bare HTML elements (e.g., `h1`, `a`, `button`).
+5. **Objects**: Class-based selectors defining design patterns (e.g., media object).
+6. **Components**: Specific UI components (e.g., buttons, cards).
+7. **Utilities**: Utility and helper classes with a very specific role (e.g., `.text-center`).
+
+#### Benefits of ITCSS
+
+- **Scalability**: Facilitates the addition of new styles without affecting existing ones.
+- **Maintainability**: Organizes styles in a logical manner, making it easier to maintain and update.
+- **Specificity Management**: Helps in managing CSS specificity, reducing the chances of style conflicts.
 
 ## Importance of Caching Data
 

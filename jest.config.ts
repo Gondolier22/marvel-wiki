@@ -9,11 +9,11 @@ export default {
     __DEV__: true,
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  testMatch: ['**/*.test.tsx', '**/*.test.ts'],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '<rootDir>/src/frameworks/ui/mocks/*\\.*',
+  testMatch: ['**/src/**/*.test.tsx', '**/src/**/*.test.ts'],
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/src/main\\.tsx'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/src/utils/',
     '<rootDir>/src/main\\.tsx',
-    '<rootDir>/src/utils/indexedDB\\.ts',
+    '<rootDir>/mocks/.*',
   ],
 };
