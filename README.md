@@ -331,7 +331,7 @@ Follow these steps to install and run the application:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/marvel-wiki.git
+   git clone https://github.com/Gondolir22/marvel-wiki.git
    cd marvel-wiki
    ```
 
