@@ -3,10 +3,22 @@ import { Searcher } from '../../components/searcher';
 import { useCharacterListController } from './hooks/use-characters-list-controller';
 import { CharacterCardList } from '../../components/characters-cards-list';
 import { AlertMessage } from '../../components/alert-message';
+import { Pagination } from '../../components/pagination';
 
 // Componente para mostrar la lista de personajes
 const CharactersList = () => {
-  const { data, searchText, setSearchText, isLoading, error } = useCharacterListController();
+  const {
+    data,
+    searchText,
+    setSearchText,
+    isLoading,
+    error,
+    onNextPage,
+    onPrevPage,
+    isNextPageDisabled,
+    isPrevPageDisabled,
+    totalItems,
+  } = useCharacterListController();
 
   return (
     <section className="c-characters-list">
@@ -18,6 +30,15 @@ const CharactersList = () => {
       {!isLoading && !error && (
         <CharacterCardList
           cards={data?.map(({ id, name, avatarUrl }) => ({ id, name, avatarUrl })) ?? []}
+        />
+      )}
+      {/* Mostrar la paginación */}
+      {totalItems > 0 && (
+        <Pagination
+          nextPage={onNextPage}
+          previousPage={onPrevPage}
+          isNextPageDisabled={isNextPageDisabled}
+          isPreviousPageDisabled={isPrevPageDisabled}
         />
       )}
       {/* Mostrar un mensaje de error si ocurre un error */}

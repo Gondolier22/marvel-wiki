@@ -3,22 +3,32 @@ import { adaptCharacter, CharacterApiItem } from '../../adapters/character-adapt
 import { axiosMarvel } from '../axios/axios-marvel';
 import { Character } from '../../models/character';
 
+type UseGetCharactersQueryParams = { searchText?: string; offset?: number };
+
+type UseGetCharactersQueryResult = {
+  characters?: Character[];
+  totalItems: number;
+};
 // Hook personalizado para obtener personajes
-export const useGetCharactersQuery = (searchText: string) => {
-  const queryFn = async (search: string) => {
-    let url = `/v1/public/characters?limit=50`;
-    if (search) {
-      url += `&nameStartsWith=${search}`;
+export const useGetCharactersQuery = ({ offset = 0, searchText }: UseGetCharactersQueryParams) => {
+  const queryFn = async ({ offset, searchText }: UseGetCharactersQueryParams) => {
+    let url = `/v1/public/characters?limit=50&offset=${offset}`;
+    if (searchText) {
+      url += `&nameStartsWith=${searchText}`;
     }
     const response = await axiosMarvel.get(url);
-    return response.data.data.results?.map((result: CharacterApiItem) =>
-      adaptCharacter({ characterData: result })
-    );
+
+    return {
+      characters: response.data.data.results?.map((result: CharacterApiItem) =>
+        adaptCharacter({ characterData: result })
+      ),
+      totalItems: response.data.data?.total,
+    };
   };
 
-  const { data, isLoading, error } = useQuery<Character[]>({
-    queryKey: ['get-characters', searchText],
-    queryFn: () => queryFn(searchText),
+  const { data, isLoading, error } = useQuery<UseGetCharactersQueryResult>({
+    queryKey: ['get-characters', searchText, offset],
+    queryFn: () => queryFn({ offset, searchText }),
     staleTime: 24 * 60 * 60 * 1000,
   });
 
